@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: springmicroservices/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - springmicroservices-network
+
+  loans:
+    image: springmicroservices/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - springmicroservices-network
+
+  cards:
+    image: springmicroservices/cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - springmicroservices-network
+
+networks:
+  springmicroservices-network:
